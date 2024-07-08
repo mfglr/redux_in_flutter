@@ -6,14 +6,14 @@ class AppState{
   final Iterable<String> items;
   final ItemFilter itemFilter;
 
-  Iterable<String> get filteredItems {
+  List<String> get filteredItems {
     switch(itemFilter){
       case(ItemFilter.all):
-        return items;
+        return items.toList();
       case(ItemFilter.longText):
-        return items.where((item) => item.length >= 10);
+        return items.where((item) => item.length >= 10).toList();
       default:
-        return items.where((item) => item.length <= 3);
+        return items.where((item) => item.length <= 3).toList();
     }
   }
 

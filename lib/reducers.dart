@@ -15,13 +15,12 @@ Reducer<Iterable<String>> itemReducer = combineReducers<Iterable<String>>([
 ]);
 
 
-ItemFilter itemFilterReducer(ItemFilter oldItemFilter,Action action){
-  if(action is ChangeFilterTypeAction) action.itemFilter;
-  return oldItemFilter;
+ItemFilter itemFilterReducer(ItemFilter itemFilter,Action action){
+  if(action is ChangeFilterTypeAction) return action.itemFilter;
+  return itemFilter;
 }
 
-
-AppState appStateReducer(AppState oldState,Action action) 
+AppState appStateReducer(AppState oldState, action) 
   => AppState(
     items: itemReducer(oldState.items,action),
     itemFilter: itemFilterReducer(oldState.itemFilter, action)

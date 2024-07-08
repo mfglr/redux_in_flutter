@@ -13,12 +13,13 @@ class ChangeFilterTypeAction extends Action{
 }
 
 @immutable
-class AddItemAction{
+class AddItemAction extends Action{
   final String item;
   const AddItemAction({required this.item});
 }
 
-class RemoveItemAction{
+@immutable
+class RemoveItemAction extends Action{
   final String item;
   const RemoveItemAction({required this.item});
 }
