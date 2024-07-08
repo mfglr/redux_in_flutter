@@ -18,3 +18,7 @@ class AddItemAction{
   const AddItemAction({required this.item});
 }
 
+class RemoveItemAction{
+  final String item;
+  const RemoveItemAction({required this.item});
+}
