@@ -1,7 +1,14 @@
 import 'package:redux_in_flutter/actions.dart';
+import 'package:redux/redux.dart';
+
 
 Iterable<String> addItemReducer(Iterable<String> prevItems,AddItemAction action)
   => prevItems.followedBy([action.item]);
 
 Iterable<String> removeItemReducer(Iterable<String> prevItems,RemoveItemAction action)
   => prevItems.where((item) => item != action.item);
+
+Reducer<Iterable<String>> itemReducer = combineReducers<Iterable<String>>([
+  TypedReducer<Iterable<String>,AddItemAction>(addItemReducer).call,
+  TypedReducer<Iterable<String>,RemoveItemAction>(removeItemReducer).call,
+]);

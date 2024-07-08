@@ -8,8 +8,8 @@ abstract class Action{
 
 @immutable
 class ChangeFilterTypeAction extends Action{
-  final ItemFilter filter;
-  const ChangeFilterTypeAction({required this.filter});
+  final ItemFilter itemFilter;
+  const ChangeFilterTypeAction({required this.itemFilter});
 }
 
 @immutable
