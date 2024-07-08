@@ -59,7 +59,14 @@ class _HomeState extends State<Home> {
         child: Container(
           margin: const EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              OutlinedButton(
+                onPressed: (){
+                  store.dispatch(const LoadItemsAction());
+                },
+                child: const Text("load items")
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

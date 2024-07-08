@@ -23,3 +23,14 @@ class RemoveItemAction extends Action{
   final String item;
   const RemoveItemAction({required this.item});
 }
+
+@immutable
+class LoadItemsAction extends Action{
+  const LoadItemsAction();
+}
+
+@immutable
+class SuccessfullyFetchItemsedAction extends Action{
+  final List<String> items;
+  const SuccessfullyFetchItemsedAction({required this.items});
+}

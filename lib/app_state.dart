@@ -5,6 +5,7 @@ import 'package:redux_in_flutter/item_filter.dart';
 class AppState{
   final Iterable<String> items;
   final ItemFilter itemFilter;
+  final bool isLoading;
 
   List<String> get filteredItems {
     switch(itemFilter){
@@ -19,6 +20,7 @@ class AppState{
 
   const AppState({
     required this.items,
-    required this.itemFilter
+    required this.itemFilter,
+    required this.isLoading,
   });
 }
