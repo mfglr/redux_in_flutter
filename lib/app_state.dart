@@ -21,6 +21,4 @@ class AppState{
     required this.items,
     required this.itemFilter
   });
-
-  
 }
